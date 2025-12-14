@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Themed Layout</title>
+
+<style>
+
+/* ========== COMPILED FROM SCSS ========== */
+
+/* Light Theme */
+.light {
+    --bg-color: #f7f9fc;
+    --text-color: #222;
+    --primary-color: #4a90e2;
+    --card-bg: #ffffff;
+}
+
+/* Dark Theme */
+.dark {
+    --bg-color: #1c1f26;
+    --text-color: #f1f1f1;
+    --primary-color: #7ab8ff;
+    --card-bg: #2a2e36;
+}
+
+/* Base Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+    transition: 0.3s;
+}
+
+button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    background: var(--primary-color);
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Content Section */
+.content {
+    background: var(--card-bg);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.content h2 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+}
+
+</style>
+</head>
+
+<body class="light">
+
+<header>
+    <h1>Startup Themed Layout</h1>
+    <button id="themeToggle">Toggle Theme</button>
+</header>
+
+<section class="content">
+    <h2>Welcome to Our Platform</h2>
+    <p>
+        This layout allows easy theme switching using SCSS custom properties.
+    </p>
+    <button class="primary-btn">Explore More</button>
+</section>
+
+<script>
+    const body = document.querySelector("body");
+    document.getElementById("themeToggle").onclick = () => {
+        body.classList.toggle("dark");
+        body.classList.toggle("light");
+    };
+</script>
+
+</body>
+</html>
+
