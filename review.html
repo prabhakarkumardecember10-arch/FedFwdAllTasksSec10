@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Album Highlight</title>
+
+  <!-- CSS Styling -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f23333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ee0a0a;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 20px;
+      text-decoration: wavy underline;
+        text-underline-offset: 6px;
+    }
+
+    .album-container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: rgb(244, 60, 60);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Flexbox layout */
+    .album {
+      display: flex;
+      gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .album img {
+      width: 250px;
+      border-radius: 8px;
+    }
+
+    .album-details h2 {
+      margin-bottom: 10px;
+    }
+
+    .tracklist li {
+      margin: 5px 0;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* Media Query for responsiveness */
+    @media (max-width: 600px) {
+      .album {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .album img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Music Album Highlight</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="album-container">
+    <section class="album">
+
+      <!-- Album Cover Image -->
+      <img src="image.jpg" alt="Music album cover image">
+
+      <!-- Album Details -->
+      <div class="album-details">
+        <h2>Album Name: Melody Beats</h2>
+        <p><strong>Artist:</strong> Harmony Band</p>
+        <p><strong>Release Year:</strong> 2024</p>
+
+        <!-- Track List -->
+        <h3>Track List</h3>
+        <ol class="tracklist">
+          <li>Opening Tune</li>
+          <li>Rhythm Flow</li>
+          <li>Silent Echo</li>
+          <li>Night Vibes</li>
+          <li>Final Harmony</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Music Album Page</p>
+  </footer>
+
+</body>
+</html>

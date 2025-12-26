@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Restaurant</title>
+
+    <!-- ALL CSS HERE -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+        }
+
+        /* Header */
+        header {
+            background: #920505;
+            padding: 15px;
+            text-align: center;
+            color: rgb(66, 44, 44);
+        }
+
+        header nav a {
+            margin: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            border: none;
+            background: #ff6347;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Menu */
+        .menu {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 15px;
+            margin: 10px auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px #ccc;
+        }
+
+        /* Contact */
+        .contact {
+            background: #ff6347;
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>🍽 Delicious Restaurant</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Welcome to Our Restaurant</h2>
+        <p>Fresh Food • Great Taste • Best Price</p>
+        <button onclick="showAlert()">Order Now</button>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+
+        <div class="menu-item">
+            <h3>Pizza</h3>
+            <p>₹299 • Fresh Cheese Pizza</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>Burger</h3>
+            <p>₹149 • Crispy Veg/Chicken Burger</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>Pasta</h3>
+            <p>₹199 • White Sauce Pasta</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>📍 Patna, Bihar</p>
+        <p>📞 +91 9876543210</p>
+        <p>⏱ Mon–Sat: 10 AM to 10 PM</p>
+    </section>
+
+    <!-- ALL JAVASCRIPT HERE -->
+    <script>
+        function showAlert() {
+            alert("Thank you for choosing Delicious Restaurant! 🍕");
+        }
+    </script>
+
+</body>
