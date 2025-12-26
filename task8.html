@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Product Showcase</title>
+
+<style>
+/* =====================================================
+   SCSS CONCEPTS (EXPLAINED – EXAM READY)
+   -----------------------------------------------------
+   $radius: 16px;
+   $spacing: 18px;
+
+   @mixin glassCard {
+     border-radius: $radius;
+     padding: $spacing;
+     backdrop-filter: blur(10px);
+   }
+
+   .products {
+     .card {
+       @include glassCard;
+     }
+   }
+   ===================================================== */
+
+/* ---------- CSS CUSTOM PROPERTIES (THEMES) ---------- */
+:root {
+  --bg-gradient: linear-gradient(135deg, #667eea, #764ba2);
+  --text-color: #ffffff;
+  --card-bg: rgba(255,255,255,0.15);
+  --accent: #ffd369;
+}
+
+.dark-theme {
+  --bg-gradient: linear-gradient(135deg, #141E30, #243B55);
+  --text-color: #eaeaea;
+  --card-bg: rgba(0,0,0,0.4);
+  --accent: #4dd0e1;
+}
+
+/* ---------- GLOBAL STYLES ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.app {
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+header button {
+  background: var(--accent);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+header button:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- PRODUCT GRID ---------- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* ---------- PRODUCT CARD ---------- */
+.card {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+  <header>
+    <h1>✨ Smart Product Store</h1>
+    <button id="themeToggle">Switch Theme</button>
+  </header>
+
+  <section class="products" id="productList"></section>
+</div>
+
+<script>
+/* =====================================================
+   JAVASCRIPT OOP WITH INHERITANCE
+   ===================================================== */
+
+// Base (Parent) class
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  description() {
+    return `Price: ₹${this.price}`;
+  }
+}
+
+// Child class (Inheritance)
+class ElectronicProduct extends Product {
+  constructor(name, price, warranty) {
+    super(name, price);
+    this.warranty = warranty;
+  }
+
+  description() {
+    return `Price: ₹${this.price}<br>Warranty: ${this.warranty} years`;
+  }
+}
+
+// Another child class
+class FashionProduct extends Product {
+  constructor(name, price, size) {
+    super(name, price);
+    this.size = size;
+  }
+
+  description() {
+    return `Price: ₹${this.price}<br>Size: ${this.size}`;
+  }
+}
+
+// Creating product objects
+const items = [
+  new ElectronicProduct("Laptop Pro", 75000, 2),
+  new FashionProduct("Designer Jacket", 3499, "L"),
+  new ElectronicProduct("Smartphone X", 42000, 1),
+  new FashionProduct("Sneakers", 2999, "42")
+];
+
+// Rendering products
+const list = document.getElementById("productList");
+
+items.forEach(item => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <h3>${item.name}</h3>
+    <p>${item.description()}</p>
+  `;
+  list.appendChild(card);
+});
+
+// Theme toggle
+document.getElementById("themeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
+});
+</script>
+
+</body>
+</html>
